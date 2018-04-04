@@ -4,13 +4,13 @@ import { NavComponent } from './components/nav/nav.component';
 import { ItemComponent } from './components/item/item.component';
 import { StateDirective } from './directives/state/state.directive';
 import { FormComponent } from './components/form/form.component';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule,
+    ReactiveFormsModule,
     NgbCollapseModule
   ],
   declarations: [NavComponent,

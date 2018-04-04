@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Item } from '../../../shared/models/item.model';
+import { CollectionService } from '../../../core/services/collection/collection.service';
+
 
 @Component({
   selector: 'app-add-item',
@@ -7,9 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddItemComponent implements OnInit {
 
-  constructor() { }
+  constructor(private collectionService: CollectionService) { }
 
   ngOnInit() {
   }
-
+  addItem(item: Item) {
+    this.collectionService.add(item);
+  }
 }

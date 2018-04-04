@@ -26,5 +26,11 @@ export class CollectionService {
   getById(id: string): Item
   {
   }*/
-
+  /**
+   * add
+   *
+   */
+  add(item: Item) {
+    this._collection.push(item);
+  }
 }
