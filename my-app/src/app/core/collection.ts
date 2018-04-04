@@ -17,7 +17,7 @@ export const COLLECTION: Item[] = [
   {
     id: 'c1',
     name: 'Sarra',
-    reference: '1234',
+    reference: '1236',
     state: State.LIVRE
   }
 ];
