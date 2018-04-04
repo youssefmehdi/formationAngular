@@ -1,22 +1,14 @@
   <div class="card">
     <div class="card-header">
-      {{item.state}}
+      <!-- <span class="state-alivrer"  *ngIf="state.ALIVRER === item.state ">{{item.state}}</span>
+      <span class="state-encours"  *ngIf="state.ENCOURS === item.state ">{{item.state}}</span>
+      <span class="state-livree"  *ngIf="state.LIVREE === item.state ">{{item.state}}</span> -->
+      <span [appState]="item.state">{{item.state}}</span>
     </div>
     <div class="card-body">
       <h5 class="card-title">Nom et Prénom: {{item.name}}</h5>
       <p class="card-text">Référence:{{item.reference}}</p>
-      <a href="#" class="btn btn-primary">Todo</a>
+      <button class="btn btn-primary"  *ngIf="state.ALIVRER === item.state " (click)="changeState(state.ENCOURS)" >{{state.ENCOURS}}</button>
+      <button class="btn btn-primary"  *ngIf="state.ENCOURS === item.state " (click)="changeState(state.LIVREE)" >{{state.LIVREE}}</button>
     </div>
   </div>
-  <!-- {{collection | json}} -->
-    <div class="card">
-    <div class="card-header">
-      {{item.state}}
-    </div>
-    <div class="card-body">
-      <h5 class="card-title">Nom et Prénom: {{item.name}}</h5>
-      <p class="card-text">Référence:{{item.reference}}</p>
-      <a href="#" class="btn btn-primary">Todo</a>
-    </div>
-  </div>
-  <!-- {{collection | json}} -->

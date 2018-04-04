@@ -18,6 +18,6 @@ export const COLLECTION: Item[] = [
     id: 'c1',
     name: 'Sarra',
     reference: '1236',
-    state: State.LIVRE
+    state: State.LIVREE
   }
 ];
