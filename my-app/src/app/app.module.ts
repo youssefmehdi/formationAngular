@@ -11,6 +11,11 @@ import { PageNotFoundModule } from './page-not-found/page-not-found.module';
 import { CollectionService } from './core/services/collection/collection.service';
 import { AppRoutingModule } from './app-routing.module';
 
+import { AngularFireModule } from 'angularfire2';
+import { environment } from '../environments/environment.prod';
+
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+
 @NgModule({
   imports: [
     CoreModule,
@@ -21,6 +26,8 @@ import { AppRoutingModule } from './app-routing.module';
     // ItemsModule,  routers will load it in lazy mode
     AppRoutingModule,
     PageNotFoundModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule // imports firebase/firestore, only needed for database features
   ],
   declarations: [AppComponent],
   providers: [CollectionService],
