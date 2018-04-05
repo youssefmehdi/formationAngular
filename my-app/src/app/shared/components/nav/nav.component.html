@@ -1,19 +1,13 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">{{title}}</a>
+  <a class="navbar-brand" routerLink="/home">{{title}}</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" (click)="isCollapsed = !isCollapsed"
   [attr.aria-expanded]="!isCollapsed" aria-controls="navbarNav">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
+  <div class="collapse navbar-collapse" id="navbarNav" [ngbCollapse]="isCollapsed">
     <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="#">Accueil</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Liste</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Ajouter</a>
+      <li class="nav-item" *ngFor="let link of links">
+        <a class="nav-link" [routerLink]="link.routerLink" (click)="isCollapsed = true">{{link.intitule}}</a>
       </li>
     </ul>
   </div>

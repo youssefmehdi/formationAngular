@@ -9,6 +9,7 @@ import { ItemsModule } from './items/items.module';
 import { SharedModule } from './shared/shared.module';
 import { PageNotFoundModule } from './page-not-found/page-not-found.module';
 import { CollectionService } from './core/services/collection/collection.service';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   imports: [
@@ -16,9 +17,10 @@ import { CollectionService } from './core/services/collection/collection.service
     BrowserModule,
     SharedModule,
     NgbModule.forRoot(),
-    PageNotFoundModule,
     HomeModule,
-    ItemsModule
+    // ItemsModule,  routers will load it in lazy mode
+    AppRoutingModule,
+    PageNotFoundModule,
   ],
   declarations: [AppComponent],
   providers: [CollectionService],

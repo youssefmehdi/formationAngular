@@ -6,12 +6,14 @@ import { StateDirective } from './directives/state/state.directive';
 import { FormComponent } from './components/form/form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    NgbCollapseModule
+    NgbCollapseModule,
+    RouterModule
   ],
   declarations: [NavComponent,
     ItemComponent,
